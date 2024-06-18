@@ -23,6 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+    if (Schema::hasTable('password_reset_tokens')) {
         Schema::dropIfExists('password_reset_tokens');
     }
 };
